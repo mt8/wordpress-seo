@@ -552,7 +552,7 @@ setWordPressSeoL10n();
 
 		if ( window.Worker ) {
 			// var myWorker = new Worker( "http://local.wordpress.test/wp-content/plugins/wordpress-seo/js/src/wp-seo-analysis-worker.js" );
-			var myWorker = createWorker( "http://localhost:8080/wp-seo-analysis-worker-761.js" );
+			var myWorker = createWorker( "http://localhost:8080/wp-seo-analysis-worker-772.js" );
 
 			console.log( myWorker );
 			myWorker.onmessage = function( message ) {

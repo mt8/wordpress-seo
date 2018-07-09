@@ -46,6 +46,7 @@ const entry = {
 	"wp-seo-wp-globals-backport": "./wp-seo-wp-globals-backport.js",
 	"wp-seo-replacevar-plugin": "./wp-seo-replacevar-plugin.js",
 	"wp-seo-analysis-worker": "./wp-seo-analysis-worker.js",
+	"wp-seo-worker-imported": "./wp-seo-worker-imported.js",
 };
 
 /**

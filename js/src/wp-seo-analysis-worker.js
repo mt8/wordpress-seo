@@ -3,7 +3,7 @@ import { App } from "yoastseo";
 let app;
 
 function initialize( payload ) {
-	console.log( 'ARGS', payload );
+	console.log( "ARGS", payload );
 }
 
 
@@ -28,4 +28,22 @@ onmessage = function( message ) {
 	postMessage( [ "HI" ] );
 };
 
-console.log( 'hi' );
+const assessments = [];
+
+self.registerCustomAssessment = function( name, method ) {
+	assessments.push( {
+		name,
+		method,
+	} );
+};
+
+console.log( "hi" );
+
+importScripts( [ "http://localhost:8080/wp-seo-worker-imported-772.js" ] );
+
+console.log( self.method() );
+
+assessments.forEach( ( assessment ) => {
+	console.log( "Running assessment " + assessment.name );
+	assessment.method();
+} );

@@ -106,7 +106,7 @@ const defaultWebpackConfig = {
 			filename: "commons-" + pluginVersionSlug + ".min.js",
 
 			// Exclude the worker from the commons, because it is loaded completely separately.
-			chunks: Object.keys( paths.entry ).filter( entry => entry !== "wp-seo-analysis-worker" ),
+			chunks: Object.keys( paths.entry ).filter( entry => entry !== "wp-seo-analysis-worker" && entry !== "wp-seo-worker-imported" ),
 		} ),
 	],
 };
