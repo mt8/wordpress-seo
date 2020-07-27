@@ -255,8 +255,14 @@ class Indexable_Post_Type_Presentation extends Indexable_Presentation {
 				return '';
 			}
 		}
-
-		return $this->date->format( $this->source->post_date_gmt );
+		/**
+		 * Filter: 'wpseo_opengraph_article_published_time' - Allow the open graph article published time.
+		 *
+		 * @param string $article_published_time The publish time GMT.
+		 *
+		 * @api string The publish time GMT.
+		 */
+		return $this->date->format( \apply_filters( 'wpseo_opengraph_article_published_time', $this->source->post_date_gmt ) );
 	}
 
 	/**
@@ -266,9 +272,15 @@ class Indexable_Post_Type_Presentation extends Indexable_Presentation {
 	 */
 	public function generate_open_graph_article_modified_time() {
 		if ( $this->source->post_modified_gmt !== $this->source->post_date_gmt ) {
-			return $this->date->format( $this->source->post_modified_gmt );
+			/**
+			 * Filter: 'wpseo_opengraph_article_modified_time' - Allow the open graph article modified time.
+			 *
+			 * @param string $article_published_time The formatted modified time GMT.
+			 *
+			 * @api string The formatted modified time GMT.
+			 */
+			return $this->date->format( \apply_filters( 'wpseo_opengraph_article_modified_time', $this->source->post_modified_gmt ) );
 		}
-
 		return '';
 	}
 
